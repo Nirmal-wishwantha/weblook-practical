@@ -13,6 +13,7 @@ import DehazeIcon from "@mui/icons-material/Dehaze";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"; // Dropdown icon
 import HomeSlider from "./HomeSlider";
 
+import logo from '../../assets/logo.png'
 const Navbar = () => {
     const [servicesAnchor, setServicesAnchor] = useState(null);
     const [pagesAnchor, setPagesAnchor] = useState(null);
@@ -33,19 +34,27 @@ const Navbar = () => {
         setPagesAnchor(null);
     };
 
+
+
+
     return (
         <Box>
             <AppBar position="fixed" sx={{ backgroundColor: "#012970" }}>
                 <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-                    
-                    {/* Left Section - Logo */}
-                    <Box>
+
+                    <Box sx={{display:'flex'}}>
+
+                        <img src={logo} style={{ width: 50, filter: "invert(1) brightness(2)" }} />
+
+
+
+                        <Typography sx={{ fontWeight: "bold", marginLeft: 2,marginTop:1 ,fontSize:30}}>
+                            Finbiz
+                        </Typography>
 
                     </Box>
-                    
-                    <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-                        Finbiz
-                    </Typography>
+
+
 
                     {/* Center Section - Navigation Links */}
                     <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
@@ -89,7 +98,13 @@ const Navbar = () => {
                             </Menu>
                         </Box>
 
+
+
                         <Button color="inherit">Blog</Button>
+
+
+
+
                         <Button color="inherit">Elements</Button>
                         <Button color="inherit">Contact</Button>
                     </Box>
