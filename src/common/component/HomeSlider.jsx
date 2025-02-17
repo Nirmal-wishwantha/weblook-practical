@@ -37,48 +37,59 @@ const HomeSlider = () => {
     };
 
     return (
-        <Box sx={{marginTop:8}}>
+        <Box sx={{ marginTop: 8, }}>
             <Slider {...settings}>
                 {slides.map((slide, index) => (
                     <Box
                         key={index}
                         sx={{
-                            height: "90vh",
+                            
+                            height: "85vh",
                             backgroundImage: `url(${slide.image})`,
                             backgroundSize: "cover",
                             backgroundPosition: "center",
                             display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
+                            // alignItems: "center",
+                            // justifyContent: "center",
                             position: "relative",
                         }}
                     >
                         {/* Overlay */}
                         <Box
                             sx={{
+                              
                                 position: "absolute",
                                 top: 0,
                                 left: 0,
-                                width: "100%",
+                                width: "auto",
                                 height: "100%",
                                 backgroundColor: "rgba(0,0,0,0.5)",
                             }}
                         ></Box>
 
                         {/* Content */}
-                        <Container sx={{ position: "relative", textAlign: "center", color: "white" }}>
-                            <Typography variant="h6">{slide.subtitle}</Typography>
-                            <Typography variant="h2" sx={{ fontWeight: "bold" }}>{slide.title}</Typography>
-                            <Typography variant="body1" sx={{ maxWidth: "600px", margin: "20px auto" }}>
-                                {slide.description}
-                            </Typography>
-                            <Button variant="contained" sx={{ backgroundColor: "#0066FF", marginRight: "10px" }}>
-                                Get Started
-                            </Button>
-                            <Button variant="outlined" sx={{ color: "white", borderColor: "white" }}>
-                                About Us
-                            </Button>
-                        </Container>
+                        
+                            <Container sx={{ position:"relative",color: "white", textAlign: "center", marginRight:100,marginTop:20}}>
+
+                                <Typography variant="h6">{slide.subtitle}</Typography>
+
+                                <Typography variant="h2" sx={{ fontWeight: "bold" }}>{slide.title}</Typography>
+
+                                <Typography variant="body1" sx={{ maxWidth: "600px", margin: "20px auto" }}>
+                                    {slide.description}
+                                </Typography>
+
+                                <Button variant="contained" sx={{ backgroundColor: "#0066FF", marginRight: "10px" }}>
+                                    Get Started
+                                </Button>
+
+                                <Button variant="outlined" sx={{ color: "white", borderColor: "white" }}>
+                                    About Us
+                                </Button>
+
+                            </Container>
+
+                 
                     </Box>
                 ))}
             </Slider>
