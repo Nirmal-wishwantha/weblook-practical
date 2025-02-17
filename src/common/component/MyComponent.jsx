@@ -11,6 +11,7 @@ import { ForkLeft, Image } from '@mui/icons-material';
 
 import sliderIMG1 from '../../assets/sliderIMG1.jpg'
 import sliderIMG2 from '../../assets/sliderIMG2.jpg'
+import { blue } from '@mui/material/colors';
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -35,9 +36,9 @@ export default function RowAndColumnSpacing() {
                     <Box sx={{ display: 'flex', position: 'absolute' }}>
 
 
-                        <Box sx={{ width: '200px', backgroundColor: 'blue', height: '300px', borderRadius: 5 ,marginLeft:20}}>
+                        <Box sx={{ width: '200px', backgroundColor: 'blue', height: '300px', borderRadius: 5, marginLeft: 20 ,boxShadow:10}}>
 
-                            <Typography sx={{ marginLeft: 3, color: 'white', fontSize: 50 }}>
+                            <Typography sx={{ marginLeft: 3, color: 'white', fontSize: 50,fontWeight:500 }}>
                                 85 %
                             </Typography>
 
@@ -47,37 +48,47 @@ export default function RowAndColumnSpacing() {
 
                         </Box>
 
-                        <Box sx={{ position: 'relative'}}>
-
-                            <Box sx={{ position: 'absolute', zIndex: 1,top:'10%',left:'50%'}}>
-                                <img
-                                    src={sliderIMG1}
-                                    alt="Slider 1"
-                                    style={{
-                                        width: 200,
-                                        height: 300,
-                                        borderRadius: 10,
-                                        border: 5,
-                                        borderColor: 'white',
-                                        zIndex: 1,
-                                        
-                                    }}
-                                />
-                            </Box>
-
-                            <Box sx={{ position: 'absolute', top: '10%', left: '40%', transform: 'translate(-50%, -50%)' }}>
+                        <Box sx={{ position: 'absolute', left: '100%' }}>
+                            
+                            <Box
+                                sx={{
+                                    position: "absolute",
+                                    zIndex: 2, 
+                                }}
+                            >
                                 <img
                                     src={sliderIMG2}
                                     alt="Slider 2"
                                     style={{
-                                        width: 100,
-                                        height: 100,
+                                        width: 170,
+                                        height: 180,
                                         margin: 5,
-                                        zIndex:1.1
+                                        zIndex: 2, 
+                                        borderRadius: 10,
+                                        border: "6px solid white",
+                                        marginTop: '-15%',
+                                        marginLeft: '-25%'
+                                    }}
+                                />
+                            </Box>
+
+                            {/* Second Image (Bottom Layer - sliderIMG1) */}
+                            <Box sx={{ position: 'absolute', zIndex: 1, top: '25%' }}>
+                                <img
+                                    src={sliderIMG1}
+                                    alt="Slider 1"
+                                    style={{
+                                        width: 290,
+                                        height: 250,
+                                        borderRadius: 10,
+                                        zIndex: 1,
+                                        marginLeft: '-40%',
+                                        marginTop: '45%'
                                     }}
                                 />
                             </Box>
                         </Box>
+
 
 
 
@@ -102,7 +113,7 @@ export default function RowAndColumnSpacing() {
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum qui laborum fugit, consequuntur dicta aliquid, reiciendis dolorum
                         </Typography>
 
-                        <Box sx={{ margin: 2 }}>
+                        <Box sx={{ marginTop: 1 }}>
 
                             <Button startIcon={<SettingsIcon />} sx={{ marginRight: 2, fontWeight: 500, boxShadow: 1 }}>
                                 Commited Teems
@@ -114,6 +125,10 @@ export default function RowAndColumnSpacing() {
                         </Box>
 
 
+                    </Box>
+
+                    <Box sx={{ marginLeft: 2 }}>
+                        <Button sx={{ backgroundColor: 'blue', color: 'white', borderRadius: 3 }}>Get Started</Button>
                     </Box>
                 </Grid>
 
