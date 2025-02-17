@@ -24,7 +24,7 @@ const Navbar = () => {
     };
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: "#012970", padding: "8px 16px" }}>
+        <AppBar position="fixed" sx={{ backgroundColor: "#012970"}}>
             <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
                 {/* Left Section - Logo */}
                 <Typography variant="h6" sx={{ fontWeight: "bold" }}>
